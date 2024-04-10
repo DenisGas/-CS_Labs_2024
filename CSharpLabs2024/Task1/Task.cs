@@ -13,8 +13,8 @@ namespace CSharpLabs2024.Task1
             Console.WriteLine("Task1");
 
             Book book = new Book("C# Programming");
-            book.Author = new Author { Name = "Sasha Molodetc" };
-            book.Content = new Content { Text = "This is text about Sasha" };
+            book.Author = "Sasha Molodetc" ;
+            book.Content = "This is text about Sasha" ;
 
             book.Show();
 

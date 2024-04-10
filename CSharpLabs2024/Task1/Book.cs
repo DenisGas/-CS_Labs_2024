@@ -16,18 +16,20 @@ namespace CSharpLabs2024.Task1
         public Book(string bookTitle)
         {
             title = new Title(bookTitle);
+            author = new Author();
+            content = new Content();
         }
 
-        public Author Author
+        public string Author
         {
-            get { return author; }
-            set { author = value; }
+            get { return author.Name; }
+            set { author.Name = value; }
         }
 
-        public Content Content
+        public string Content
         {
-            get { return content; }
-            set { content = value; }
+            get { return content.Text; }
+            set { content.Text = value; }
         }
 
         public void Show()
