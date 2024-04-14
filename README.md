@@ -1,6 +1,13 @@
-# Практична робота №2
+## Practical work #2
 
-1. Написати програму. Дано три цілих числа. Вибрати з них ті, які належать інтервалу [1,10+№]. Де №- остання цифра порядкового номеру у списку групи.
-2. Написати програму. Дано три сторони трикутника. Обчислити периметр та площу трикутника. Визначити вид трикутника за сторонами. (потрібно робити перевірку на дійсність трикутника та на коректність введених даних).
-3. Написати програму. Дано масив Х довжиною 10+№  (де №-остання цифра студента у списку групи). Знайти мінімальне та максимальне значення. Вивести на екран масив та самі значення.  
-4. Написати програму. З масиву Х довжиною 10+№  (де №-остання цифра студента у списку групи), серед елементів якого є позитивні та негативні та нуль, сформуйте новий масив Y, узявши тільки елементи з Х які більше по модулю заданого числа М. Виведіть на екран число М та масиви заданий та отриманий.
+## Task 1
+Write a program. Three integers are given. Choose from them those that belong to the interval [1,10+#]. Where # is the last digit of the group's ordinal number.
+
+## Task 2
+Write a program. Three sides of a triangle are given. Calculate the perimeter and area of the triangle. Determine the type of triangle by the sides. (You need to check the validity of the triangle and the correctness of the entered data).
+
+## Task 3
+Write a program. Given an array X of length 10+# (where # is the last digit of the student in the group list). Find the minimum and maximum values. Print the array and the values.
+
+## Task 4
+Write a program. From the array X of length 10+# (where # is the last digit of the student in the group list), among the elements of which there are positive and negative and zero, form a new array Y, taking only the elements from X that are greater than the given number M. Print the number M and the arrays given and obtained.
