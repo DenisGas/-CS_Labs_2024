@@ -2,10 +2,14 @@
 {
     public abstract class Char : IDamageble
     {
-
+        private int _hp;
         public string Name { get; set; }
-        public int Hp { get; set; }
-        public bool IsDefending { get; set; }
+        public int Hp
+        {
+            get { return _hp; }
+            set { _hp = value < 0 ? 0 : value; }
+        }
+        private bool IsDefending { get; set; }
 
         protected Char(string name, int hp)
         {
@@ -18,9 +22,9 @@
         {
             if (IsDefending)
             {
-                damage /= 2; 
+                damage /= 2;
                 Console.WriteLine($"{Name} заблокував частину шкоди! Шкода зменшена до {damage}.");
-                IsDefending = false; 
+                IsDefending = false;
             }
             Hp -= damage;
             if (Hp < 0) Hp = 0;
