@@ -57,6 +57,9 @@ internal class Program
 
     static Mage ChooseMage()
     {
+        Console.WriteLine("Введіть ваше ім'я:");
+        string playerName = Console.ReadLine();
+
         Console.WriteLine("Виберіть мага:");
         Console.WriteLine("1. FireMage");
         Console.WriteLine("2. WaterMage");
@@ -68,9 +71,9 @@ internal class Program
                 switch (choice)
                 {
                     case 1:
-                        return new FireMage("Гравець", 90, 100);
+                        return new FireMage(playerName, 90, 100);
                     case 2:
-                        return new WaterMage("Гравець", 100, 120);
+                        return new WaterMage(playerName, 100, 120);
                     default:
                         Console.WriteLine("Неправильний вибір. Спробуйте знову.");
                         break;
