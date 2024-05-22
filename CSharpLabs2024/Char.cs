@@ -1,15 +1,15 @@
 ﻿namespace CSharpLabs2024
 {
+    public delegate void CharacterDeathEventHandler(string characterName);
+
     public abstract class Char : IDamageble
     {
-        private int _hp;
+
+        public event CharacterDeathEventHandler CharacterDeath;
+
         public string Name { get; set; }
-        public int Hp
-        {
-            get { return _hp; }
-            set { _hp = value < 0 ? 0 : value; }
-        }
-        private bool IsDefending { get; set; }
+        public int Hp { get; set; }
+        public bool IsDefending { get; set; }
 
         protected Char(string name, int hp)
         {
@@ -22,13 +22,14 @@
         {
             if (IsDefending)
             {
-                damage /= 2;
+                damage /= 2; 
                 Console.WriteLine($"{Name} заблокував частину шкоди! Шкода зменшена до {damage}.");
-                IsDefending = false;
+                IsDefending = false; 
             }
             Hp -= damage;
             if (Hp < 0) Hp = 0;
             Console.WriteLine($"{Name} отримав {damage} шкоди. Залишилось здоров'я: {Hp}");
+            CheckHealthStatus();
         }
 
         public void Defend()
@@ -41,5 +42,19 @@
         {
             Console.WriteLine($"Ім'я: {Name}, Здоров'я: {Hp}");
         }
+
+        protected virtual void CheckHealthStatus()
+        {
+            if (Hp <= 0)
+            {
+                OnCharacterDeath(Name);
+            }
+        }
+
+        protected virtual void OnCharacterDeath(string characterName)
+        {
+            CharacterDeath?.Invoke(characterName);
+        }
+
     }
 }

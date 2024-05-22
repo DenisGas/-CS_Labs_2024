@@ -4,6 +4,7 @@ using System.Text;
 using CSharpLabs2024.Spells;
 using CSharpLabs2024.Mages;
 using CSharpLabs2024;
+using System.Numerics;
 
 internal class Program
 {
@@ -20,6 +21,9 @@ internal class Program
 
         List<ISpell> playerSpells = GetSpellsForMage(player);
         List<ISpell> botSpells = GetSpellsForMage(bot);
+
+        player.CharacterDeath += CharacterDeathHandler;
+        bot.CharacterDeath += CharacterDeathHandler;
 
         Random rnd = new Random();
 
@@ -156,5 +160,10 @@ internal class Program
         {
             bot.Defend();
         }
+    }
+
+    static void CharacterDeathHandler(string characterName)
+    {
+        Console.WriteLine($"Персонаж {characterName} помер!");
     }
 }
